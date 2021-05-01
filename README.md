@@ -10,10 +10,10 @@ Translate API
 - OCR (send image, return text)  -- done
     --> Cloud Vision API
 
-- Translate (Detect lang and translate to specified lang, english to french example: /translate french suck my dick)
+- Translate (Detect lang and translate to specified lang, english to french example: /translate french suck my dick) -- done
     --> Translate API
 
-- Object Detection (send image, return object name)
+- Object Detection (send image, return object name) -- done
     --> Cloud Vision API
 
 - Maps (send address / location, return map and streetview)
