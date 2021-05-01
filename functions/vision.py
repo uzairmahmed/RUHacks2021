@@ -1,4 +1,4 @@
-import os, io
+import os
 from google.cloud import vision
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"./google_keys.json"
