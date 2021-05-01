@@ -47,7 +47,7 @@ async def search(context, message):
     except Exception as e:
         print(e)
 
-@bot.command(name='image', help='Get first result from Google Images [-c image dog]')
+@bot.command(name='img', help='Get first result from Google Images [-c img dog]')
 async def image(context, message):
     try:
         args = str(context.message.content).split(' ')
