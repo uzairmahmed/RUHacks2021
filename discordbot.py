@@ -12,6 +12,7 @@ from discord.ext import commands
 import sys
 sys.path.append('functions')
 from text import translate_text
+from search import *
 
 # BOT VARIABLES
 token="ODM3OTU1NjYzMDQ5MTMwMDM0.YI0FBg.2kGS2lPvj9BZC2lJL4CLJLs7ckg"
@@ -28,13 +29,31 @@ async def on_command_error(context, error):
     if isinstance(error, commands.CommandNotFound):
         await context.send("huh") 
 
-@bot.command(name='translate', help='Translate from one language to the other [-cloud translate fr hello]')
+@bot.command(name='translate', help='Translate from one language to the other [-c translate fr hello]')
 async def translate(context, message):
     try:
         args = str(context.message.content).split(' ')
         await context.send("Translate: " + translate_text(args[2], (' ').join(args[3:])))
     except Exception as e:
-        await context.send("Wrong format")
+        print(e)
+
+@bot.command(name='search', help='Search Google for anything and get links back [-c search cookie recipes 3')
+async def search(context, message):
+    try:
+        args = str(context.message.content).split(' ')
+        results = search_google((' ').join(args[2:len(args)-1]), int(args[-1]))
+        for link in results:
+            await context.send(link)
+    except Exception as e:
+        print(e)
+
+@bot.command(name='image', help='Get first result from Google Images [-c image dog]')
+async def image(context, message):
+    try:
+        args = str(context.message.content).split(' ')
+        await context.send(image_search((' ').join(args[2:]))[0])
+    except Exception as e:
+        print(e)
 
 if __name__ == "__main__":
     # for extension in startup_extensions:

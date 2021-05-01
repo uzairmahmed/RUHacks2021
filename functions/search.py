@@ -8,7 +8,7 @@ with open('more_keys.json', 'r') as f:
 cse_key = keys["google_cse_key"]
 cse_id = keys["google_cse_id"]
 
-def search(query, num_results):
+def search_google(query, num_results):
     """
     returns a list of search results as URLs
     query: self explanatory
@@ -37,5 +37,5 @@ def image_search(query):
         temp.append(results[i]['link'])
     return temp
     
-print(search("holy panda", 2))
-print(image_search("holy panda"))
+# print(search("holy panda", 2))
+# print(image_search("holy panda"))
