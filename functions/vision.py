@@ -40,7 +40,7 @@ def identify(url):
     for object_ in objects:
         objectsList.append(object_.name)
 
-    return str(objectsList)
+    return objectsList
 
 def tests():
     ricoImgURL = 'https://media.discordapp.net/attachments/837958218981703690/838109079259316255/2020-10-13_9.png'
@@ -48,4 +48,4 @@ def tests():
     print("OCR: "       + ocr(ricoImgURL))
     print("Identify: "  + identify(ricoImgURL))
 
-tests()
+#tests()
