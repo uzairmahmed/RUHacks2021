@@ -4,6 +4,10 @@ from google.cloud import vision
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"./google_keys.json"
 
 def ocr(url):
+    """
+    runs OCR on an image and returns the text from it
+    url: discord media url from the command invocation message
+    """
     client = vision.ImageAnnotatorClient()
     
     image = vision.Image()
@@ -19,6 +23,10 @@ def ocr(url):
 
 
 def identify(url):
+    """
+    runs object detection on an image and returns a list of all detected objects in it
+    url: discord media url from the command invocation message
+    """
     objectsList = []
     
     client = vision.ImageAnnotatorClient()
