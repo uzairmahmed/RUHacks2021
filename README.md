@@ -1,8 +1,13 @@
 # RUHacks2021
 
+## APIs Used
+
+Cloud Vision API
+Translate API
+
 ## Features to implement
 
-- OCR (send image, return text)
+- OCR (send image, return text)  -- done
     --> Cloud Vision API
 
 - Translate (Detect lang and translate to specified lang, english to french example: /translate french suck my dick)

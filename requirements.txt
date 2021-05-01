@@ -1,0 +1,4 @@
+discord.py
+google-cloud-vision
+google-cloud-translate
+opencv-python
