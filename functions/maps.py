@@ -1,6 +1,11 @@
 import googlemaps
+import os
 
-key = "AIzaSyCRkKthGv2FIGs6JG6OD67Nd1ZXVfZwNkM"
+with open('more_keys.json', 'r') as f:
+    keys = json.load(f)
+    f.close()
+
+key = keys["google_cse_key"]
 
 gmaps = googlemaps.Client(key = key)
 
@@ -14,9 +19,9 @@ def placeInfo(locationName):
     placeResult  = gmaps.find_place(input=locationName, input_type = "textquery", fields=['rating','opening_hours','formatted_address'])
     return placeResult
 
-name = "Cineplex Dundas"
-urlMap, urlStreetView = streetAndMapsView(name)
-placeResult = placeInfo(name)
-print("map view is: "+urlMap)
-print("street view is: "+urlStreetView)
-print(placeResult.items())
+#name = "Cineplex Dundas"
+#urlMap, urlStreetView = streetAndMapsView(name)
+#placeResult = placeInfo(name)
+#print("map view is: "+urlMap)
+#print("street view is: "+urlStreetView)
+#print(placeResult.items())
