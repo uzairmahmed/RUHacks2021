@@ -1,0 +1,29 @@
+Search:
+-c search why how to tie a tie 3
+
+Image:
+-c img bird
+
+Identify Object:
+-c id https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg
+
+OCR:
+-c ocr https://www.thesimpledollar.com/wp-content/uploads/2019/12/road-signs-hero-4-600x375.jpg
+
+Map:
+-c map ryerson university
+
+Place
+-c place cn tower
+
+Sentiment:
+-c sentiment you are great!
+-c sentiment you are terrible
+
+TTS:
+-c tts hello RU Hacks
+
+Translate:
+-c translate fr hello
+
+

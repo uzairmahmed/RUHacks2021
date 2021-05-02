@@ -9,7 +9,7 @@ from discord import Game, File
 from discord.ext import commands
 
 # Functions
-import sys
+import sys, json
 sys.path.append('functions')
 from text import translate_text
 from search import search_google, image_search
@@ -18,8 +18,15 @@ from maps import streetAndMapsView, placeInfo, placeDescription
 from tts import text_to_speech
 from sentimentAnalysis import analyze_sentiment
 
+
+with open('more_keys.json', 'r') as f:
+    keys = json.load(f)
+    f.close()
+
+dckey = keys["discord_token"]
+
 # BOT VARIABLES
-token="ODM3OTU1NjYzMDQ5MTMwMDM0.YI0FBg.2kGS2lPvj9BZC2lJL4CLJLs7ckg"
+token=dckey
 bot = commands.Bot(command_prefix='-c ')
 
 yesmoji = '\N{THUMBS UP SIGN}'
