@@ -1,5 +1,5 @@
 import googlemaps
-import os
+import os, json
 
 with open('more_keys.json', 'r') as f:
     keys = json.load(f)
@@ -16,7 +16,7 @@ def streetAndMapsView(locationName):
     return urlMap, urlStreetView
 
 def placeInfo(locationName):
-    placeResult  = gmaps.find_place(input=locationName, input_type = "textquery", fields=['rating','opening_hours','formatted_address'])
+    placeResult  = gmaps.find_place(input=locationName, input_type = "textquery", fields=['name', 'rating','formatted_address', 'geometry'])
     return placeResult
 
 #name = "Cineplex Dundas"

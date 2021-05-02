@@ -34,4 +34,4 @@ def tests():
     lang = "en"
     print("Translate: " + translate_text(lang, text))
 
-tests()
+#tests()
