@@ -14,7 +14,7 @@ sys.path.append('functions')
 from text import translate_text
 from search import search_google, image_search
 from vision import ocr, identify
-from maps import streetAndMapsView, placeInfo
+from maps import streetAndMapsView, placeInfo, placeDescription
 from tts import text_to_speech
 from sentimentAnalysis import analyze_sentiment
 
@@ -84,9 +84,10 @@ async def map(context):
 async def map(context):
     try:
         place = placeInfo(context.message.content[9:])
-
+        placeDesc = placeDescription(place['candidates'][0]['place_id'])
         formatted_place = '''**Name:** '''+place['candidates'][0]['name']+'''
 **Address:** '''+place['candidates'][0]['formatted_address']+'''
+**Phone Number:** '''+str(placeDesc['result']['formatted_phone_number'])+'''
 **Google Rating:** '''+str(place['candidates'][0]['rating'])+'''/5
 **Longitude:** '''+str(place['candidates'][0]['geometry']['location']['lat'])+'''
 **Latitude:** '''+str(place['candidates'][0]['geometry']['location']['lng'])

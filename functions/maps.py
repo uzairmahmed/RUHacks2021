@@ -16,8 +16,12 @@ def streetAndMapsView(locationName):
     return urlMap, urlStreetView
 
 def placeInfo(locationName):
-    placeResult  = gmaps.find_place(input=locationName, input_type = "textquery", fields=['name', 'rating','formatted_address', 'geometry'])
+    placeResult  = gmaps.find_place(input=locationName, input_type = "textquery", fields=['name', 'rating','formatted_address', 'geometry', 'place_id'])
     return placeResult
+
+def placeDescription(placeID):
+    placeDesc = gmaps.place(placeID)
+    return placeDesc
 
 #name = "Cineplex Dundas"
 #urlMap, urlStreetView = streetAndMapsView(name)
