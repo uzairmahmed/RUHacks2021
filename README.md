@@ -1,4 +1,12 @@
-# RUHacks2021
+# RUHacks 2021 - CloudBot
+
+**The all-in-one Google Cloud Discord Bot!**
+
+*Uzair Ahmed, Arjun Dureja, Niranjan Krishnaswamy, Jason Sayroo*
+
+**[https://devpost.com/software/gcloudbot](https://devpost.com/software/gcloudbot)**
+
+![logo](https://raw.githubusercontent.com/uzairmahmed/RUHacks2021/main/CloudBotCover.png )
 
 ## Inspiration
 Due to COVID-19 lockdown guidelines, hanging out with friends in person is very limited. The only way to interact with our friends is via online platforms, and many friend groups have decided to create Discord servers to host their legendary group conversations.
