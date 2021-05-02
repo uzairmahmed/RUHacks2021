@@ -5,7 +5,7 @@
     Discord Bot
 '''
 
-from discord import Game
+from discord import Game, File
 from discord.ext import commands
 
 # Functions
@@ -15,6 +15,7 @@ from text import translate_text
 from search import search_google, image_search
 from vision import ocr, identify
 from maps import streetAndMapsView, placeInfo
+from tts import text_to_speech
 
 # BOT VARIABLES
 token="ODM3OTU1NjYzMDQ5MTMwMDM0.YI0FBg.2kGS2lPvj9BZC2lJL4CLJLs7ckg"
@@ -72,14 +73,14 @@ async def image(context, message):
         print(e)
 
 @bot.command(name='map', help='Map and street view of location [-c map ryerson university]')
-async def map(context, message):
+async def map(context):
     try:
         await context.send((' ').join(streetAndMapsView(context.message.content[7:])))
     except Exception as e:
         print(e)
 
 @bot.command(name='place', help='Get details about a place [-c place walmart]')
-async def map(context, message):
+async def map(context):
     try:
         place = placeInfo(context.message.content[9:])
 
@@ -90,6 +91,16 @@ async def map(context, message):
 **Latitude:** '''+str(place['candidates'][0]['geometry']['location']['lng'])
 
         await context.send(formatted_place)
+    except Exception as e:
+        print(e)
+
+@bot.command(name='tts', help='Text to speech [-c tts hello]')
+async def tts(context):
+    try:
+        text = context.message.content[7:]
+        text_to_speech(text)
+        with open('ttsFile.mp3', 'rb') as f:
+            await context.send(file=File(f, 'TTS.mp3'))
     except Exception as e:
         print(e)
 
