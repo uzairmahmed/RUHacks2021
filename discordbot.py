@@ -16,6 +16,7 @@ from search import search_google, image_search
 from vision import ocr, identify
 from maps import streetAndMapsView, placeInfo
 from tts import text_to_speech
+from sentimentAnalysis import analyze_sentiment
 
 # BOT VARIABLES
 token="ODM3OTU1NjYzMDQ5MTMwMDM0.YI0FBg.2kGS2lPvj9BZC2lJL4CLJLs7ckg"
@@ -153,6 +154,14 @@ async def on_reaction_add(reaction,user):
                     
                     temp_url = i['urls'][i['index']]
                     await reset_img_msg(reaction, temp_url)
+
+@bot.command(name='sentiment', help='Analyse the sentiment of a sentence [-c sentiment how are you]')
+async def sentiment(context):
+    try:
+        result = analyze_sentiment(context.message.content[13:])
+        await context.send('Score: ' + str(round(result[0], 3)) + '\nMagnitude: ' + str(round(result[1], 3)))
+    except Exception as e:
+        print(e)
     
 async def reset_img_msg(reaction, temp_url):
     await reaction.message.edit(content=temp_url)

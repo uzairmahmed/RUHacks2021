@@ -4,3 +4,4 @@ google-cloud-vision
 google-cloud-translate
 opencv-python
 googlemaps
+google-cloud-language
