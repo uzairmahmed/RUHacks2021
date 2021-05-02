@@ -31,7 +31,6 @@ def image_search(query):
     temp = []
     service = build("customsearch", "v1", developerKey=cse_key)
     results = service.cse().list(q=query, cx=cse_id, searchType = "image").execute()['items']
-    print(results)
     
     for i in range(0, len(results)):
         temp.append(results[i]['link'])
