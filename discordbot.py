@@ -1,6 +1,6 @@
 '''
     May 1, 2021
-    Uzair Ahmed
+    Uzair Ahmed, Arjun Dureja, Niranjan Krishnaswamy, Jason Sayroo
 
     Discord Bot
 '''
